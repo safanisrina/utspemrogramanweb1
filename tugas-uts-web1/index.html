@@ -1,0 +1,68 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Sistem Penjualan Buku</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="login-page">
+
+    <div class="login-container">
+
+        <div class="login-icon">
+            <span>📚</span>
+        </div>
+
+        <div class="login-header">
+            <h1>BookStore</h1>
+            <h2>Sistem Penjualan Buku</h2>
+            <p>Selamat datang! Silakan login untuk melanjutkan.</p>
+        </div>
+
+        <form id="formLogin" onsubmit="login(event)">
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Masukkan email kamu"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Masukkan password kamu"
+                    required
+                >
+            </div>
+
+            <p id="pesanLogin" class="pesan-error"></p>
+
+            <button type="submit" class="btn-primary">
+                Login
+            </button>
+
+        </form>
+
+        <div class="login-footer">
+            <p>Website Penjualan dan Pengelolaan Buku</p>
+            <small>© 2026 BookStore. All Rights Reserved.</small>
+        </div>
+
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
+```
+

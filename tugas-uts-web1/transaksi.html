@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Transaksi - BookStore</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">📚</div>
+            <h2>Penjualan Buku</h2>
+            <p>BookStore Management</p>
+        </div>
+
+        <nav class="sidebar-menu">
+            <p class="menu-label">MENU UTAMA</p>
+
+            <a href="dashboard.html">
+                <span>🏠</span> Dashboard
+            </a>
+
+            <a href="stok.html">
+                <span>📚</span> Data Stok Buku
+            </a>
+
+            <a href="checkout.html">
+                <span>🛒</span> Checkout
+            </a>
+
+            <a href="tracking.html">
+                <span>📦</span> Tracking Pengiriman
+            </a>
+
+            <a href="transaksi.html" class="active">
+                <span>📋</span> Data Transaksi
+            </a>
+
+            <a href="laporan.html">
+                <span>📊</span> Laporan
+            </a>
+
+            <div class="sidebar-divider"></div>
+
+            <a href="index.html" onclick="logout()" class="logout-menu">
+                <span>🚪</span> Logout
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>© 2026 BookStore</p>
+        </div>
+    </aside>
+
+    <!-- KONTEN UTAMA -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>Data Transaksi</h1>
+                <p>Kelola dan lihat riwayat transaksi penjualan buku</p>
+            </div>
+
+            <div class="user-info">
+                <span>👤</span>
+                <span id="namaPengguna">Pengguna</span>
+            </div>
+        </header>
+
+        <section class="content-box">
+
+            <!-- JUDUL HALAMAN -->
+            <div class="transaction-heading">
+                <div>
+                    <h2>Daftar Transaksi</h2>
+                    <p>Berikut merupakan data transaksi pembelian buku.</p>
+                </div>
+
+                <div class="transaction-icon">📋</div>
+            </div>
+
+            <!-- PENCARIAN -->
+            <div class="search-box transaction-search">
+                <span>🔍</span>
+                <input
+                    type="text"
+                    id="cariTransaksi"
+                    placeholder="Cari nomor transaksi atau nama pembeli..."
+                    oninput="filterTransaksi()"
+                >
+            </div>
+
+            <!-- TABEL TRANSAKSI -->
+            <div class="table-container">
+
+                <table class="transaction-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nomor Transaksi</th>
+                            <th>Nama Pembeli</th>
+                            <th>Nama Buku</th>
+                            <th>Jumlah</th>
+                            <th>Total Harga</th>
+                            <th>Ekspedisi</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tabelTransaksi">
+                        <tr>
+                            <td colspan="8">
+                                Belum ada transaksi.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <!-- FOOTER TABEL -->
+            <div class="transaction-footer">
+                <p>© 2026 BookStore Management System</p>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+
+<script>
+    renderTransaksi();
+    tampilkanNamaPengguna();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Penjualan - BookStore</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">📚</div>
+            <h2>Penjualan Buku</h2>
+            <p>BookStore Management</p>
+        </div>
+
+        <nav class="sidebar-menu">
+            <p class="menu-label">MENU UTAMA</p>
+
+            <a href="dashboard.html">
+                <span>🏠</span> Dashboard
+            </a>
+
+            <a href="stok.html">
+                <span>📚</span> Data Stok Buku
+            </a>
+
+            <a href="checkout.html">
+                <span>🛒</span> Checkout
+            </a>
+
+            <a href="tracking.html">
+                <span>📦</span> Tracking Pengiriman
+            </a>
+
+            <a href="transaksi.html">
+                <span>📋</span> Data Transaksi
+            </a>
+
+            <a href="laporan.html" class="active">
+                <span>📊</span> Laporan
+            </a>
+
+            <div class="sidebar-divider"></div>
+
+            <a href="index.html" onclick="logout()" class="logout-menu">
+                <span>🚪</span> Logout
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>© 2026 BookStore</p>
+        </div>
+    </aside>
+
+    <!-- KONTEN UTAMA -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>Laporan Penjualan</h1>
+                <p>Ringkasan dan hasil penjualan buku</p>
+            </div>
+
+            <div class="user-info">
+                <span>👤</span>
+                <span id="namaPengguna">Pengguna</span>
+            </div>
+        </header>
+
+        <section class="dashboard-content">
+
+            <!-- RINGKASAN -->
+            <div class="report-heading">
+                <div>
+                    <h2>Ringkasan Penjualan</h2>
+                    <p>Informasi keseluruhan transaksi BookStore.</p>
+                </div>
+                <div class="report-icon">📊</div>
+            </div>
+
+            <div class="dashboard-cards">
+
+                <div class="card report-card">
+                    <div class="report-card-icon">📋</div>
+                    <h3>Total Transaksi</h3>
+                    <p id="laporanTotalTransaksi">0</p>
+                    <span>Jumlah transaksi tercatat</span>
+                </div>
+
+                <div class="card report-card">
+                    <div class="report-card-icon">📚</div>
+                    <h3>Total Buku Terjual</h3>
+                    <p id="laporanBukuTerjual">0</p>
+                    <span>Jumlah seluruh buku terjual</span>
+                </div>
+
+                <div class="card report-card">
+                    <div class="report-card-icon">💰</div>
+                    <h3>Total Pendapatan</h3>
+                    <p id="laporanPendapatan">Rp 0</p>
+                    <span>Total hasil penjualan buku</span>
+                </div>
+
+            </div>
+
+            <!-- TABEL LAPORAN -->
+            <section class="content-box report-table-box">
+
+                <div class="report-table-heading">
+                    <div>
+                        <h2>Data Laporan Penjualan</h2>
+                        <p>Daftar seluruh transaksi penjualan buku.</p>
+                    </div>
+
+                    <button class="btn-print" onclick="window.print()">
+                        🖨️ Cetak Laporan
+                    </button>
+                </div>
+
+                <div class="table-container">
+                    <table class="report-table">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nomor Transaksi</th>
+                                <th>Nama Pembeli</th>
+                                <th>Nama Buku</th>
+                                <th>Jumlah</th>
+                                <th>Total Harga</th>
+                                <th>Tanggal</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tabelLaporan">
+                            <tr>
+                                <td colspan="7">
+                                    Belum ada data laporan.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="report-footer">
+                    <p>© 2026 BookStore Management System</p>
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+
+<script>
+    renderLaporan();
+    tampilkanNamaPengguna();
+</script>
+
+</body>
+</html>

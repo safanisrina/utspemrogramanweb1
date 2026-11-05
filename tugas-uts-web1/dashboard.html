@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Sistem Penjualan Buku</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="sidebar-header">
+                <div class="sidebar-logo">📚</div>
+                <h2>Penjualan Buku</h2>
+                <p>BookStore Management</p>
+            </div>
+
+            <nav class="sidebar-menu">
+                <p class="menu-label">MENU UTAMA</p>
+
+                <a href="dashboard.html" class="active">
+                    <span>🏠</span> Dashboard
+                </a>
+
+                <a href="stok.html">
+                    <span>📚</span> Data Stok Buku
+                </a>
+
+                <a href="checkout.html">
+                    <span>🛒</span> Checkout
+                </a>
+
+                <a href="tracking.html">
+                    <span>📦</span> Tracking Pengiriman
+                </a>
+
+                <a href="transaksi.html">
+                    <span>📋</span> Data Transaksi
+                </a>
+
+                <a href="laporan.html">
+                    <span>📊</span> Laporan
+                </a>
+
+                <div class="sidebar-divider"></div>
+
+                <a href="index.html" onclick="logout()" class="logout-menu">
+                    <span>🚪</span> Logout
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>© 2026 BookStore</p>
+            </div>
+
+        </aside>
+
+
+        <!-- KONTEN UTAMA -->
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Selamat datang di Sistem Penjualan Buku!</p>
+                </div>
+
+                <div class="user-info">
+                    <span>👤</span>
+                    <strong id="namaPengguna">Pengguna</strong>
+                </div>
+            </header>
+
+
+            <section class="dashboard-content">
+
+                <div class="section-heading">
+                    <h2>Ringkasan Data</h2>
+                    <p>Informasi keseluruhan penjualan dan persediaan buku.</p>
+                </div>
+
+
+                <!-- KARTU RINGKASAN -->
+                <div class="dashboard-cards">
+
+                    <div class="card">
+                        <div class="card-icon">📚</div>
+                        <h3>Total Jenis Buku</h3>
+                        <p id="totalBuku">0</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">📦</div>
+                        <h3>Total Stok Buku</h3>
+                        <p id="totalStok">0</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🛒</div>
+                        <h3>Total Transaksi</h3>
+                        <p id="totalTransaksi">0</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">💰</div>
+                        <h3>Total Pendapatan</h3>
+                        <p id="totalPendapatan">Rp 0</p>
+                    </div>
+
+                </div>
+
+
+                <!-- INFORMASI SISTEM -->
+                <section class="content-box">
+                    <h2>Informasi Sistem</h2>
+
+                    <p>
+                        Sistem ini digunakan untuk membantu pengelolaan
+                        penjualan buku secara lebih mudah dan terstruktur.
+                        Pengguna dapat melihat stok buku, melakukan checkout,
+                        memantau pengiriman, serta melihat laporan transaksi.
+                    </p>
+                </section>
+
+
+                <!-- MENU UTAMA -->
+                <section class="content-box">
+                    <h2>Menu Utama</h2>
+                    <p class="menu-description">
+                        Pilih menu berikut untuk mengakses fitur sistem.
+                    </p>
+
+                    <div class="menu-cards">
+
+                        <a href="stok.html" class="menu-card">
+                            <span>📚</span>
+                            <h3>Data Stok Buku</h3>
+                            <p>Melihat daftar buku dan jumlah stok yang tersedia.</p>
+                        </a>
+
+                        <a href="checkout.html" class="menu-card">
+                            <span>🛒</span>
+                            <h3>Checkout</h3>
+                            <p>Melakukan proses pemesanan dan pembelian buku.</p>
+                        </a>
+
+                        <a href="tracking.html" class="menu-card">
+                            <span>📦</span>
+                            <h3>Tracking Pengiriman</h3>
+                            <p>Melihat status dan riwayat pengiriman pesanan.</p>
+                        </a>
+
+                        <a href="laporan.html" class="menu-card">
+                            <span>📊</span>
+                            <h3>Laporan</h3>
+                            <p>Melihat ringkasan dan laporan penjualan buku.</p>
+                        </a>
+
+                    </div>
+                </section>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+        renderDashboard();
+        tampilkanNamaPengguna();
+    </script>
+
+</body>
+</html>

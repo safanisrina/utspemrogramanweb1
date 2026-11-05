@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Stok Buku - BookStore</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="sidebar-header">
+            <div class="sidebar-logo">📚</div>
+            <h2>Penjualan Buku</h2>
+            <p>BookStore Management</p>
+        </div>
+
+        <nav class="sidebar-menu">
+            <p class="menu-label">MENU UTAMA</p>
+
+            <a href="dashboard.html">
+                <span>🏠</span> Dashboard
+            </a>
+
+            <a href="stok.html" class="active">
+                <span>📚</span> Data Stok Buku
+            </a>
+
+            <a href="checkout.html">
+                <span>🛒</span> Checkout
+            </a>
+
+            <a href="tracking.html">
+                <span>📦</span> Tracking Pengiriman
+            </a>
+
+            <a href="transaksi.html">
+                <span>📋</span> Data Transaksi
+            </a>
+
+            <a href="laporan.html">
+                <span>📊</span> Laporan
+            </a>
+
+            <div class="sidebar-divider"></div>
+
+            <a href="index.html" onclick="logout()" class="logout-menu">
+                <span>🚪</span> Logout
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>© 2026 BookStore</p>
+        </div>
+
+    </aside>
+
+    <!-- KONTEN UTAMA -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>Data Stok Buku</h1>
+                <p>Daftar katalog dan persediaan buku.</p>
+            </div>
+
+            <div class="user-info">
+                <span>👤</span>
+                <strong id="namaPengguna">Pengguna</strong>
+            </div>
+        </header>
+
+        <!-- KONTEN STOK -->
+        <section class="content-box">
+
+            <div class="section-heading">
+                <h2>Daftar Buku</h2>
+                <p>Berikut merupakan daftar buku yang tersedia di toko.</p>
+            </div>
+
+            <!-- PENCARIAN -->
+            <div class="stok-search">
+                <span>🔍</span>
+
+                <input
+                    type="text"
+                    id="cariBuku"
+                    placeholder="Cari kode atau nama buku..."
+                    oninput="filterStok()"
+                >
+            </div>
+
+            <!-- TABEL BUKU -->
+            <div class="table-container">
+
+                <table class="stok-table">
+
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Kode Barang</th>
+                            <th>Cover</th>
+                            <th>Nama Buku</th>
+                            <th>Jenis Barang</th>
+                            <th>Edisi</th>
+                            <th>Stok</th>
+                            <th>Harga</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tabelStok">
+                        <tr>
+                            <td colspan="8">
+                                Data buku sedang dimuat...
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div class="stok-footer">
+                <p>📚 Data katalog dan persediaan buku BookStore</p>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+
+<script>
+    renderStok();
+    tampilkanNamaPengguna();
+</script>
+
+</body>
+</html>

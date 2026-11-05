@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking Pengiriman - BookStore</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">📚</div>
+            <h2>Penjualan Buku</h2>
+            <p>BookStore Management</p>
+        </div>
+
+        <nav class="sidebar-menu">
+            <p class="menu-label">MENU UTAMA</p>
+
+            <a href="dashboard.html">
+                <span>🏠</span> Dashboard
+            </a>
+
+            <a href="stok.html">
+                <span>📚</span> Data Stok Buku
+            </a>
+
+            <a href="checkout.html">
+                <span>🛒</span> Checkout
+            </a>
+
+            <a href="tracking.html" class="active">
+                <span>📦</span> Tracking Pengiriman
+            </a>
+
+            <a href="transaksi.html">
+                <span>📋</span> Data Transaksi
+            </a>
+
+            <a href="laporan.html">
+                <span>📊</span> Laporan
+            </a>
+
+            <div class="sidebar-divider"></div>
+
+            <a href="index.html" onclick="logout()" class="logout-menu">
+                <span>🚪</span> Logout
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>© 2026 BookStore</p>
+        </div>
+    </aside>
+
+    <!-- KONTEN UTAMA -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>Tracking Pengiriman</h1>
+                <p>Pantau status pengiriman pesanan buku</p>
+            </div>
+
+            <div class="user-info">
+                <span>👤</span>
+                <span id="namaPengguna">Pengguna</span>
+            </div>
+        </header>
+
+        <!-- FORM PENCARIAN -->
+        <section class="content-box">
+
+            <div class="tracking-heading">
+                <div>
+                    <h2>Cari Nomor Pengiriman</h2>
+                    <p>Masukkan nomor DO untuk melihat informasi pengiriman buku.</p>
+                </div>
+
+                <div class="tracking-icon">📦</div>
+            </div>
+
+            <form onsubmit="cariTracking(event)" class="tracking-search-form">
+
+                <div class="form-group">
+                    <label for="nomorDO">Nomor DO (Delivery Order)</label>
+
+                    <input
+                        type="text"
+                        id="nomorDO"
+                        placeholder="Contoh: 2026001"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="btn-primary">
+                    🔍 Cari Pengiriman
+                </button>
+
+            </form>
+
+            <p id="pesanTracking"></p>
+
+            <!-- HASIL TRACKING -->
+            <div id="hasilTracking" class="tracking-result" style="display: none;">
+
+                <div class="result-heading">
+                    <div>
+                        <h2>Informasi Pengiriman</h2>
+                        <p>Detail pesanan dan status pengiriman buku.</p>
+                    </div>
+                    <span class="result-icon">🚚</span>
+                </div>
+
+                <div class="tracking-info">
+
+                    <div class="tracking-detail">
+                        <span>Nomor DO</span>
+                        <strong id="hasilNomorDO">-</strong>
+                    </div>
+
+                    <div class="tracking-detail">
+                        <span>Nama Penerima</span>
+                        <strong id="hasilNama">-</strong>
+                    </div>
+
+                    <div class="tracking-detail">
+                        <span>Status Pengiriman</span>
+                        <strong id="hasilStatus">-</strong>
+                    </div>
+
+                    <div class="tracking-detail">
+                        <span>Ekspedisi</span>
+                        <strong id="hasilEkspedisi">-</strong>
+                    </div>
+
+                    <div class="tracking-detail">
+                        <span>Tanggal Kirim</span>
+                        <strong id="hasilTanggal">-</strong>
+                    </div>
+
+                    <div class="tracking-detail">
+                        <span>Kode Paket</span>
+                        <strong id="hasilPaket">-</strong>
+                    </div>
+
+                    <div class="tracking-detail">
+                        <span>Total Pembayaran</span>
+                        <strong id="hasilTotal">-</strong>
+                    </div>
+
+                </div>
+
+                <!-- RIWAYAT PERJALANAN -->
+                <div class="tracking-history">
+
+                    <h3>Riwayat Perjalanan Paket</h3>
+                    <p class="history-description">
+                        Berikut adalah perkembangan perjalanan pesanan kamu.
+                    </p>
+
+                    <div id="riwayatPerjalanan">
+                        <p>Belum ada riwayat perjalanan.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+
+<script>
+    tampilkanNamaPengguna();
+</script>
+
+</body>
+</html>
